@@ -11,18 +11,21 @@ function fibs(number) {
     first = second; // the second variable is replaced by the first, which was pushed
     second = next; // the first is reset with the next, which is the result of n1 + n2
   }
-  console.log(returnArray);
+  console.log(returnArray); // [ 0, 1, 1,  2, 3, 5, 8, 13]
   return returnArray;
 }
 
 // fibs(8);
 
-function fibsRec(number) {
+function fibsRec(number, n1, n2) {
   if (number === 0) {
-    return;
+    return [];
   }
-  console.log("BULLSHITS");
-  return fibsRec(number - 1);
+  let next = n1 + n2;
+  return [n1].concat(fibsRec(number - 1, n2, next));
+  //n1 is first placed to array, then we call the function again inside concat
+  //to concat the next result to the array until n is 0
 }
 
-fibsRec(8);
+let test = fibsRec(8, 0, 1);
+console.log(test); // [ 0, 1, 1,  2, 3, 5, 8, 13]
