@@ -27,5 +27,5 @@ function fibsRec(number, n1, n2) {
   //to concat the next result to the array until n is 0
 }
 
-let test = fibsRec(8, 0, 1);
+let test = fibsRec(12, 0, 1);
 console.log(test); // [ 0, 1, 1,  2, 3, 5, 8, 13]
